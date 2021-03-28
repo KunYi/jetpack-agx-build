@@ -139,6 +139,11 @@ function flash_cboot()
 	fi
 }
 
+function flash_dtb()
+{
+    flash -k kernel-dtb
+}
+
 function flash_kernel()
 {
 	flash -k kernel
@@ -174,6 +179,7 @@ echo -e "${red}flash${normal}: \t\t\tflash image with options"
 if is_xavier || is_tx2 || is_nx
 then
 	echo -e "${red}flash_no_rootfs${normal}: \tflash all except rootfs"
+	echo -e "${red}flash_dtb${normal}: \t\tupdate dtb"
 fi
 if is_xavier || is_nx
 then
